@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+@import "./shared/assets/fonts/font.css";
+
+@theme {
+  --font-YekanBakh: YekanBakh;
+}
+
+body {
+  @apply font-YekanBakh bg-gray-50
+}
+
+.hero-title {
+  font-family: 'YekanBakh';
+  font-weight: 700; /* فراخوانی وزن Bold */
+  font-display: swap;
+}

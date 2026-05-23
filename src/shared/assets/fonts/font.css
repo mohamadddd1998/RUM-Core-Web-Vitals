@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "YekanBakh";
+  font-style: normal;
+  font-weight: 300;
+  /* ابتدا woff2 که مدرن‌تر و کم‌حجم‌تر است */
+  src:
+    url("woff2/YekanBakhFaNum-Light.woff2") format("woff2"),
+    url("woff/YekanBakhFaNum-Light.woff") format("woff");
+  font-display: swap; /* برای جلوگیری از ناپدید شدن متن */
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("woff2/YekanBakhFaNum-Regular.woff2") format("woff2"),
+    url("woff/YekanBakhFaNum-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  font-style: normal;
+  font-weight: 600;
+  src:
+    url("woff2/YekanBakhFaNum-SemiBold.woff2") format("woff2"),
+    url("woff/YekanBakhFaNum-SemiBold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url("woff2/YekanBakhFaNum-Bold.woff2") format("woff2"),
+    url("woff/YekanBakhFaNum-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  font-style: normal;
+  font-weight: 800;
+  src:
+    url("woff2/YekanBakhFaNum-ExtraBold.woff2") format("woff2"),
+    url("woff/YekanBakhFaNum-ExtraBold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  font-style: normal;
+  font-weight: 950;
+  src:
+    url("woff2/YekanBakhFaNum-ExtraBlack.woff2") format("woff2"),
+    url("woff/YekanBakhFaNum-ExtraBlack.woff") format("woff");
+  font-display: swap;
+}
