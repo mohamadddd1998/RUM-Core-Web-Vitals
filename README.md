@@ -13,7 +13,6 @@
 این پروژه معیارهای زیر را ردیابی و تحلیل می‌کند:
 
 - **LCP (Largest Contentful Paint):** اندازه‌گیری زمان بارگذاری محتوای اصلی صفحه.
-- **FID (First Input Delay):** اندازه‌گیری تأخیر در اولین تعامل کاربر با صفحه.
 - **CLS (Cumulative Layout Shift):** اندازه‌گیری پایداری بصری و تغییرات غیرمنتظره در چیدمان صفحه.
 - **INP (Interaction to Next Paint):** (در صورت پیاده‌سازی) اندازه‌گیری پاسخگویی به تعاملات کاربر.
 
@@ -22,9 +21,6 @@
 ## 🛠 تکنولوژی‌های استفاده شده
 - **Frontend:** [React / Next.js / ...]
 - **Performance APIs:** Web Vitals Library, PerformanceObserver API
-- **Data Collection:** [نام دیتابیس یا سرویس ذخیره‌سازی، مثلاً: Firebase, InfluxDB, Node.js Server]
-- **Visualization:** [مثلاً: Chart.js, Recharts, Grafana]
-
 ---
 
 ## 💡 قابلیت‌های کلیدی
@@ -32,7 +28,7 @@
 *   **Insightful Analysis:** تبدیل داده‌های خام به نمودارهای قابل فهم برای شناسایی Bottleneckها.
 *   **Performance Budgeting:** امکان تعریف بازه‌های مجاز برای شاخص‌های عملکردی.
 *   **Error Reporting:** لاگ کردن خطاهای مربوط به کندی سرعت.
-
+  
 ---
 
 ## 🚀 راهنمای شروع به کار
