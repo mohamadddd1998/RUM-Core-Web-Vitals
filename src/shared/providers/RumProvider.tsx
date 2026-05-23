@@ -13,13 +13,17 @@ import {
 } from "web-vitals/attribution";
 import type { VitalsPayload } from "../types/vitals";
 
+interface RumContextType {
+  metrics: VitalsState;
+}
+
 interface VitalsState {
   lcp: number | null;
   inp: number | null;
   cls: number | null;
 }
 
-const RumContext = createContext<any>(undefined);
+const RumContext = createContext<RumContextType | undefined>(undefined);
 
 export const RumProvider = ({ children }: { children: ReactNode }) => {
   const [metrics, setMetrics] = useState<VitalsState>({
@@ -37,6 +41,12 @@ export const RumProvider = ({ children }: { children: ReactNode }) => {
         navigationType: metric.navigationType,
         attribution: metric.attribution,
       };
+      /*
+        ارسال امن داده‌ها بدون مسدود کردن ترد اصلی
+       navigator.sendBeacon('/api/metrics', JSON.stringify(payload));
+      */
+
+
       // آپدیت استیت برای نمایش در UI (صرفاً برای دیباگ در این مثال)
       setMetrics((prev) => ({
         ...prev,
