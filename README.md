@@ -1,73 +1,44 @@
-# React + TypeScript + Vite
+# 🚀 Web Performance Monitor (RUM & Core Web Vitals)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+یک ابزار آموزشی برای مانیتورینگ بلادرنگ (Real User Monitoring) و اندازه‌گیری شاخص‌های اصلی عملکرد وب (Core Web Vitals). این پروژه با هدف درک عمیق نحوه رفتار مرورگر، تعامل کاربر و تأثیر مستقیم بهینه‌سازی فنی بر تجربه کاربری (UX) توسعه داده شده است.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 هدف پروژه
+هدف از این پروژه، پیاده‌سازی سیستمی است که بتواند به صورت زنده، داده‌های مربوط به تجربه واقعی کاربران (Real User Data) را جمع‌آوری کرده و بر اساس استانداردهای گوگل (Core Web Vitals) تحلیل کند تا نقاط ضعف عملکردی سایت شناسایی شوند.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📊 شاخص‌های مانیتور شده (Core Web Vitals)
+این پروژه معیارهای زیر را ردیابی و تحلیل می‌کند:
 
-## Expanding the ESLint configuration
+- **LCP (Largest Contentful Paint):** اندازه‌گیری زمان بارگذاری محتوای اصلی صفحه.
+- **CLS (Cumulative Layout Shift):** اندازه‌گیری پایداری بصری و تغییرات غیرمنتظره در چیدمان صفحه.
+- **INP (Interaction to Next Paint):** (در صورت پیاده‌سازی) اندازه‌گیری پاسخگویی به تعاملات کاربر.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠 تکنولوژی‌های استفاده شده
+- **Frontend:** [React / Next.js / ...]
+- **Performance APIs:** Web Vitals Library, PerformanceObserver API
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 💡 قابلیت‌های کلیدی
+*   **Real-time Tracking:** جمع‌آوری داده‌ها از مرورگر کاربر در لحظه.
+*   **Insightful Analysis:** تبدیل داده‌های خام به نمودارهای قابل فهم برای شناسایی Bottleneckها.
+*   **Performance Budgeting:** امکان تعریف بازه‌های مجاز برای شاخص‌های عملکردی.
+*   **Error Reporting:** لاگ کردن خطاهای مربوط به کندی سرعت.
+  
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 راهنمای شروع به کار
+برای اجرای این پروژه در محیط توسعه (Local):
+```bash
+# کلون کردن پروژه
+git clone https://github.com/mohamadddd1998/your-repo-name.git
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# نصب وابستگی‌ها
+npm install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# اجرای پروژه
+npm run dev
