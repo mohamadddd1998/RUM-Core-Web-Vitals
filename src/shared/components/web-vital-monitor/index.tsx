@@ -1,4 +1,4 @@
-import { useRum } from "@/shared/providers/RumProvider";
+import { useRum } from "@/shared/hooks/useRum";
 
 const WebVitalMonitor = () => {
   const { metrics } = useRum();
@@ -27,7 +27,7 @@ const WebVitalMonitor = () => {
           <span className="text-gray-400">INP: </span>
           <span
             className={
-              metrics.inp && metrics.inp.value< 200
+              metrics.inp && metrics.inp.value < 200
                 ? "text-green-400"
                 : "text-red-400"
             }

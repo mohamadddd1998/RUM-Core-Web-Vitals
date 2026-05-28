@@ -17,7 +17,7 @@ export const MetricCard = ({
         : "text-red-500";
 
   return (
-    <div className="p-6 bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
+    <div className="p-6 bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col        items-center">
       <h3 className="text-gray-600 font-bold mb-2">{name}</h3>
       <div className={`text-3xl font-extrabold ${color}`}>
         {value.toFixed(2)}{" "}

@@ -1,10 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  type ReactNode,
-} from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import {
   onCLS,
   onINP,
@@ -12,18 +6,13 @@ import {
   type MetricWithAttribution,
 } from "web-vitals/attribution";
 import type { VitalsPayload } from "../types/vitals";
+import { RumContext } from "../contexts/RumContext";
 
-interface RumContextType {
-  metrics: VitalsState;
+export interface VitalsState {
+  lcp: VitalsPayload | null;
+  inp: VitalsPayload | null;
+  cls: VitalsPayload | null;
 }
-
-interface VitalsState {
-  lcp: number | null;
-  inp: number | null;
-  cls: number | null;
-}
-
-const RumContext = createContext<RumContextType | undefined>(undefined);
 
 export const RumProvider = ({ children }: { children: ReactNode }) => {
   const [metrics, setMetrics] = useState<VitalsState>({
@@ -46,7 +35,6 @@ export const RumProvider = ({ children }: { children: ReactNode }) => {
        navigator.sendBeacon('/api/metrics', JSON.stringify(payload));
       */
 
-
       // آپدیت استیت برای نمایش در UI (صرفاً برای دیباگ در این مثال)
       setMetrics((prev) => ({
         ...prev,
@@ -63,12 +51,4 @@ export const RumProvider = ({ children }: { children: ReactNode }) => {
   return (
     <RumContext.Provider value={{ metrics }}>{children}</RumContext.Provider>
   );
-};
-
-export const useRum = () => {
-  const context = useContext(RumContext);
-  if (!context) {
-    throw new Error("useRum must be used within a RumToClientProvider");
-  }
-  return context;
 };
